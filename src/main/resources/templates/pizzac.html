@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Pizza</title>
+</head>
+<body>
+<div>
+    people who bought margherita's:
+    <div th:each="c : ${customers}">
+        <div th:text="${c.getName()}"></div>
+    </div>
+</div>
+
+
+</body>
+</html>

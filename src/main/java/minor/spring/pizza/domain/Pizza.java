@@ -3,7 +3,8 @@ package minor.spring.pizza.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import minor.spring.pizza.domain.abs.PersistentEntity;
+import org.springframework.data.neo4j.annotation.GraphId;
+import org.springframework.data.neo4j.annotation.NodeEntity;
 
 /**
  * Created by alex on 12/15/15.
@@ -11,7 +12,12 @@ import minor.spring.pizza.domain.abs.PersistentEntity;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Pizza extends PersistentEntity {
+@NodeEntity
+public class Pizza {
+
+    @GraphId
+    private Long graphId;
+
     public String name;
     public double price;
 }
